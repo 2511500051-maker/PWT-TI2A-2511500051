@@ -8,7 +8,7 @@ $data = mysqli_query($koneksi,"SELECT * FROM guru");
     <thead style="background-color: #007bff; color: white;">
         <tr>
             <th style="text-align: center;">Kode</th>
-            <th style="text-align: center;">ID User</th>
+            <th style="text-align: center;">Id User</th>
             <th style="text-align: center;">Nama</th>
             <th style="text-align: center;">Jenis Kelamin</th>
             <th style="text-align: center;">Pendidikan Terakhir</th>
