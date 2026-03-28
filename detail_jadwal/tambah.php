@@ -1,8 +1,8 @@
 <?php
 include "config/koneksi.php";
 
-if(isset($_POST['simpan'])){
-    mysqli_query($koneksi,"INSERT INTO detail_jadwal VALUES(
+if (isset($_POST['simpan'])) {
+    mysqli_query($koneksi, "INSERT INTO detail_jadwal VALUES(
         '$_POST[Id_jadwal]',
         '$_POST[Kd_mapel]',
         '$_POST[Kd_guru]',
@@ -20,17 +20,25 @@ if(isset($_POST['simpan'])){
 
 <form method="POST" style="width: 500px; margin-top: 20px; font-family: Arial, sans-serif;">
     <label>Id Jadwal:</label><br>
-    <input type="text" name="Id_jadwal" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ccc;"><br>
+    <input type="number" name="Id_jadwal" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ccc;" placeholder="Masukan Id Jadwal"><br>
 
     <label>Kode Mapel:</label><br>
-    <input type="text" name="Kd_mapel" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ccc;"><br>
+    <input type="number" name="Kd_mapel" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ccc;" placeholder="Masukan Kode Mapel"><br>
 
     <label>Kode Guru:</label><br>
-    <input type="text" name="Kd_guru" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ccc;"><br>
+    <input type="number" name="Kd_guru" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ccc;" placeholder="Masukan Kode Guru"><br>
 
     <label>Hari:</label><br>
-    <input type="text" name="Hari" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ccc;"><br>
-
+    <select name="hari" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+        <option value="">-- Pilih Hari --</option>
+        <option value="Senin">Senin</option>
+        <option value="Selasa">Selasa</option>
+        <option value="Rabu">Rabu</option>
+        <option value="Kamis">Kamis</option>
+        <option value="Jumat">Jumat</option>
+        <option value="Sabtu">Sabtu</option>
+        <option value="Minggu">Minggu</option>
+    </select>
     <label>Jam Mulai:</label><br>
     <input type="time" name="Jam_mulai" style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ccc;"><br>
 
