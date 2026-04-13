@@ -11,8 +11,8 @@
 <?php
 if (isset($_GET['action'])) {
     if ($_GET['action'] == "hapus") {
-        $kd = $_GET['kd'];
-        $query = mysqli_query($koneksi, "DELETE FROM kelas WHERE Id_kelas='$kd'");
+        $Id = $_GET['Id'];
+        $query = mysqli_query($koneksi, "DELETE FROM kelas WHERE Id_kelas='$Id'");
         if ($query) {
             echo '
             <div class="alert alert-warning alert-dismissible">
@@ -49,9 +49,9 @@ if (isset($_GET['action'])) {
                                 <td><?= $result['Id_kelas']; ?></td>
                                 <td><?= $result['Nm_kelas']; ?></td>
                                 <td>
-                                    <a href="index.php?page=kelas&action=hapus&kd=<?= $result['Id_kelas']; ?>" title ="">
+                                    <a href="index.php?page=kelas&action=hapus&Id=<?= $result['Id_kelas']; ?>" title ="">
                                             <span class=" badge badge-danger">Hapus</span></a>
-                                    <a href="index.php?page=edit_kelas&kd=<?= $result['Id_kelas']; ?>" title="">
+                                    <a href="index.php?page=edit_kelas&Id=<?= $result['Id_kelas']; ?>" title="">
                                         <span class="badge badge-warning">Edit</span></a>
                                 </td>
                             </tr>

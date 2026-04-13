@@ -9,9 +9,10 @@
 </div>
 
 <?php
+
 if (isset($_GET['action'])) {
     if ($_GET['action'] == "hapus") {
-        $kd = $_GET['kd'];
+        $Id = $_GET['Id'];
         $query = mysqli_query($koneksi, "DELETE FROM detail_jadwal WHERE Id_jadwal='$Id'");
         if ($query) {
             echo '
@@ -29,7 +30,7 @@ if (isset($_GET['action'])) {
             <div class="card-body">
                 <a href="index.php?page=tambah_detail_jadwal" class="btn btn-primary btn-sm">Tambah Detail Jadwal</a>
                 <table class="table table-striped">
-                    <tread>
+                    <thead>
                         <tr>
                             <th style="text-align: center;">No</th>
                             <th style="text-align: center;">Id Jadwal</th>
@@ -40,14 +41,17 @@ if (isset($_GET['action'])) {
                             <th style="text-align: center;">Jam Selesai</th>
                             <th style="text-align: center;">Aksi</th>
                         </tr>
-                    </tread>
-                    <?php
-                    $no = 0;
-                    $query = mysqli_query($koneksi, "SELECT * FROM detail_jadwal");
-                    while ($result = mysqli_fetch_array($query)) {
-                        $no++;
-                    ?>
-                        <tbody>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $no = 0;
+                        $query = mysqli_query($koneksi, "SELECT dj.*, m.Kd_mapel, g.Kd_guru, jk.Id_jadwal FROM detail_jadwal dj
+                        JOIN jadwal_kelas jk ON dj.Id_jadwal = jk.Id_jadwal
+                        JOIN mapel m ON dj.Kd_mapel = m.Kd_mapel
+                        JOIN guru g ON dj.Kd_guru = g.Kd_guru");
+                        while ($result = mysqli_fetch_array($query)) {
+                            $no++;
+                        ?>
                             <tr style="text-align: center;">
                                 <td><?= $no; ?></td>
                                 <td><?= $result['Id_jadwal']; ?></td>
@@ -57,14 +61,14 @@ if (isset($_GET['action'])) {
                                 <td><?= $result['Jam_mulai']; ?></td>
                                 <td><?= $result['Jam_selesai']; ?></td>
                                 <td>
-                                    <a href="index.php?page=detail_jadwal&action=hapus&kd=<?= $result['Id_jadwal']; ?>" title ="">
-                                            <span class=" badge badge-danger">Hapus</span></a>
-                                    <a href="index.php?page=edit_detail_jadwal&kd=<?= $result['Id_jadwal']; ?>" title="">
+                                    <a href="index.php?page=detail_jadwal&action=hapus&Id=<?= $result['Id_jadwal']; ?>" title="">
+                                        <span class=" badge badge-danger">Hapus</span></a>
+                                    <a href="index.php?page=edit_detail_jadwal&Id=<?= $result['Id_jadwal']; ?>" title="">
                                         <span class="badge badge-warning">Edit</span></a>
                                 </td>
                             </tr>
-                        </tbody>
                     <?php } ?>
+                </tbody>
                 </table>
             </div>
         </div>

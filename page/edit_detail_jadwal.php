@@ -8,8 +8,8 @@
     </div>
 </div>
 
-    <?php
-    $kd = $_GET['kd'];
+    <?php 
+    $Id = $_GET['Id'];
     $edit = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM detail_jadwal WHERE Id_jadwal='$Id'"));
 
     if(isset($_POST['tambah'])){
@@ -20,8 +20,9 @@
         $Jam_mulai = $_POST['Jam_mulai'];
         $Jam_selesai = $_POST['Jam_selesai'];
 
-        $insert = mysqli_query($koneksi, "UPDATE detail_jadwal SET Id_jadwal='$Id_jadwal', Kd_mapel='$Kd_mapel', Kd_guru='$Kd_guru', Hari='$Hari', Jam_mulai='$Jam_mulai', Jam_selesai='$Jam_selesai' WHERE Id_jadwal='$Id'");
-        if ($insert) {
+        $update = mysqli_query($koneksi, "UPDATE detail_jadwal SET Kd_mapel='$Kd_mapel',Kd_guru='$Kd_guru',Hari='$Hari',Jam_mulai='$Jam_mulai',Jam_selesai='$Jam_selesai'
+        WHERE Id_jadwal='$Id'");
+        if ($update) {
             echo '<div class="alert alert-info alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
             <h5><i class="icon fas fa-info"></i> Info</h5>
