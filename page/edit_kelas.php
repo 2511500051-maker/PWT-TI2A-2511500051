@@ -9,8 +9,8 @@
 </div>
 
     <?php
-    $kd = $_GET['kd'];
-    $edit = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM kelas WHERE Id_kelas='$kd'"));
+    $Id = $_GET['Id'];
+    $edit = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM kelas WHERE Id_kelas='$Id'"));
 
     if(isset($_POST['tambah'])){
         $kd_kelas = $_POST['Id_kelas'];

@@ -12,14 +12,15 @@
 
 if (isset($_POST['tambah'])) {
     $Kd_guru = $_POST['Kd_guru'];
-    $Id_user = $_POST['Id_user'];
     $Nm_guru = $_POST['Nm_guru'];
     $Jenkel = $_POST['Jenkel'];
     $Pend_terakhir = $_POST['Pend_terakhir'];
     $Hp = $_POST['Hp'];
     $Alamat = $_POST['Alamat'];
 
-    $insert = mysqli_query($koneksi, "INSERT INTO guru (Kd_guru, Id_user, Nm_guru, Jenkel, Pend_terakhir, Hp, Alamat) VALUES ('$Kd_guru', '$Id_user', '$Nm_guru', '$Jenkel', '$Pend_terakhir', '$Hp', '$Alamat')")
+    $insert = mysqli_query($koneksi, "INSERT INTO guru (Kd_guru, Nm_guru, Jenkel, Pend_terakhir, Hp, Alamat) VALUES ('$Kd_guru', '$Nm_guru', '$Jenkel', '$Pend_terakhir', '$Hp', '$Alamat')")
+    or die (mysqli_error($koneksi));
+    $insertusers = mysqli_query($koneksi, "INSERT INTO users (Username, Password, Role) VALUES ('$Kd_guru', '1234', 'guru')")
     or die (mysqli_error($koneksi));
     if ($insert) {
         echo '<div class="alert alert-info alert-dismissible">
@@ -48,10 +49,6 @@ if (isset($_POST['tambah'])) {
                             <input type="text" name="Kd_guru"  placeholder="Masukkan Kode Guru" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="Id_user">Id User:</label>
-                            <input type="text" name="Id_user" id="Id_user" placeholder="Masukkan Id User" class="form-control">
-                        </div>
-                        <div class="form-group">
                             <label for="Nm_guru">Nama Guru:</label>
                             <input type="text" name="Nm_guru" id="Nm_guru" placeholder="Masukkan Nama Guru" class="form-control">
                         </div>
@@ -64,7 +61,14 @@ if (isset($_POST['tambah'])) {
                         </div>
                         <div class="form-group">
                             <label for="Pend_terakhir">Pendidikan Terakhir:</label>
-                            <input type="text" name="Pend_terakhir" id="Pend_terakhir" placeholder="Masukkan Pendidikan Terakhir" class="form-control">
+                            <select name="Pend_terakhir" id="Pend_terakhir" class="form-control">
+                                <option value="SMA">SMA</option>
+                                <option value="D3">D3</option>
+                                <option value="S1">S1</option>
+                                <option value="S2">S2</option>
+                                <option value="S3">S3</option>
+                            </select>
+
                         </div>
                         <div class="form-group">
                             <label for="Hp">No HP:</label>

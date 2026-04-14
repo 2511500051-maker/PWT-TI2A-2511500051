@@ -23,7 +23,11 @@ if (isset($_POST['tambah'])) {
         exit;
     }
     $Kd_guru = $_POST['Kd_guru'];
-    $Hari = $_POST['Hari'];
+    $Hari = $_POST['Hari'] ?? null;
+    if (empty($Hari)) {
+        echo "Hari belum dipilih!";
+        exit;
+    }
     $Jam_mulai = $_POST['Jam_mulai'];
     $Jam_selesai = $_POST['Jam_selesai'];
 
@@ -102,8 +106,6 @@ if (isset($_POST['tambah'])) {
                                         <option value="Rabu">Rabu</option>
                                         <option value="Kamis">Kamis</option>
                                         <option value="Jumat">Jumat</option>
-                                        <option value="Sabtu">Sabtu</option>
-                                        <option value="Minggu">Minggu</option>
                                     </select>
 
                                     <div class="form-group">
