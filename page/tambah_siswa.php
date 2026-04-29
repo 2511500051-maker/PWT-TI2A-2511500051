@@ -1,3 +1,6 @@
+<?php
+include "config/koneksi.php"
+?>
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -22,7 +25,7 @@ $_SESSION['KODE'] = $hasilkode;
 
 if(isset($_POST['tambah'])){
         $nis = $_POST['Nis'];
-        $id_user = $_POST['Id_user'];
+        $id_user = $_POST['Id_user']; 
         $nm_siswa = $_POST['Nm_siswa'];
         $jenkel = $_POST['Jenkel'];
         $hp = $_POST['Hp'];
