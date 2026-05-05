@@ -28,7 +28,7 @@ if (isset($_POST['tambah'])) {
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
             <h5><i class="icon fas fa-info"></i> Info</h5>
             <h4>Berhasil Di Simpan</h4></div>';
-        echo '<meta http-equiv="refresh" content="1;url=index.php?page=extrakulikuler">';
+        echo '<meta http-equiv="refresh" content="1;url=index.php?page=ekstra2511500051">';
     } else {
         echo '<div class="alert alert-warning alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
@@ -67,7 +67,7 @@ if (isset($_POST['tambah'])) {
                         </div>
                         <div class="card-footer">
                             <input type="submit" name="tambah" class="btn btn-primary" value="Simpan">
-                            <a href="index.php?page=guru" class="btn btn-danger">Batal</a>
+                            <a href="index.php?page=ekstra2511500051" class="btn btn-danger">Batal</a>
                         </div>
                     </form>
                 </div>

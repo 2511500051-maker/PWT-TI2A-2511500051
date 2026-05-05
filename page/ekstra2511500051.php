@@ -20,7 +20,7 @@ if (isset($_GET['action'])) {
             echo '
             <div class="alert alert-warning alert-dismissible">
                 Berhasil Di Hapus</div>';
-            echo '<meta http-equiv="refresh" content="1;url=index.php?page=extrakulikuler">';
+            echo '<meta http-equiv="refresh" content="1;url=index.php?page=ekstra2511500051">';
         }
     }
 }
@@ -30,7 +30,7 @@ if (isset($_GET['action'])) {
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <a href="index.php?page=tambah_extrakulikuler" class="btn btn-primary btn-sm">Tambah Extrakulikuler</a>
+                <a href="index.php?page=tambah_ekstra2511500051" class="btn btn-primary btn-sm">Tambah Extrakulikuler</a>
                 <table class="table table-striped">
                     <tread>
                         <tr>
@@ -58,9 +58,9 @@ if (isset($_GET['action'])) {
                                 <td><?= $result['semester051']; ?></td>
                                 <td><?= $result['thn_ajaran051']; ?></td>
                                 <td>
-                                    <a href="index.php?page=extrakulikuler&action=hapus&Id=<?= $result['id_ekstra051']; ?>" title ="">
+                                    <a href="index.php?page=ekstra2511500051&action=hapus&Id=<?= $result['id_ekstra051']; ?>" title ="">
                                             <span class=" badge badge-danger">Hapus</span></a>
-                                    <a href="index.php?page=edit_extrakulikuler&Id=<?= $result['id_ekstra051']; ?>" title="">
+                                    <a href="index.php?page=edit_ekstra2511500051&Id=<?= $result['id_ekstra051']; ?>" title="">
                                         <span class="badge badge-warning">Edit</span></a>
                                 </td>
                             </tr>
